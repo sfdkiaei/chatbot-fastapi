@@ -161,8 +161,9 @@ cython_debug/
 
 
 data/*
-!data/.gitkeep
+!data/sample.json
 models/*
 !models/.gitkeep
 .vscode
 .DS*
+flagged
