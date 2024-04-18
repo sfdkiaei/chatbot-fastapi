@@ -1,2 +1,6 @@
 dataset_path: data/bmi_faq/*.json
 model_path: models/m3hrdadfi/xlmr-large-qa-fa
+server_ip: 0.0.0.0
+server_port: 8000
+ui_ip: 0.0.0.0
+ui_port: 9000

@@ -5,7 +5,6 @@ import yaml
 from loguru import logger
 import sys
 import time
-import gradio as gr
 
 logger.add(
     sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO"
@@ -37,6 +36,7 @@ class Model:
         self.model = pipeline(
             "question-answering", model=model_name, tokenizer=model_name
         )
+        logger.info("Model loaded")
 
     def ask_question(self, question: str):
         s = time.perf_counter()
@@ -56,20 +56,12 @@ class Model:
 
 if __name__ == "__main__":
     model = Model()
-    demo = gr.Interface(
-        fn=model.ask_question,
-        inputs=["text"],
-        outputs=["text"],
-    )
-
-    demo.launch()
-
-    # questions = [
-    #     "چطوری میتونم افتتاح حساب کنم؟",
-    #     "رمز دوم همون رمز حساب است؟",
-    #     "سقف کارت به کارت چقدره؟",
-    #     "طرح مهربانی چیه؟",
-    #     "برای چک بدون امضا گواهی عدم پرداخت میدن؟",
-    # ]
-    # for question in questions:
-    #     answer = model.ask_question(question)
+    questions = [
+        "چطوری میتونم افتتاح حساب کنم؟",
+        "رمز دوم همون رمز حساب است؟",
+        "سقف کارت به کارت چقدره؟",
+        "طرح مهربانی چیه؟",
+        "برای چک بدون امضا گواهی عدم پرداخت میدن؟",
+    ]
+    for question in questions:
+        answer = model.ask_question(question)
