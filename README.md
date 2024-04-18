@@ -2,8 +2,8 @@
 This a sample chatbot project using FastAPI back-end and gradio front-end.
 
 # How to run
-- Copy your data to `data` folder.
-- Copy your model to `models` folder.
+- Copy your json file(s) dataset to `data` folder.
+- Copy your model to `models` folder or just set hugginface model name (like `SajjadAyoubi/bert-base-fa-qa`) in `config.yml`. You can use any question-answering model from huggingface.
 - Customize `config.yml` file.
 - Open new terminal and run:
     ```

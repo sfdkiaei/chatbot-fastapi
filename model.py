@@ -32,7 +32,7 @@ class Model:
         self.context = context
 
     def load_model(self):
-        model_name = self.config["model_path"]
+        model_name = self.config["model_name_or_path"]
         self.model = pipeline(
             "question-answering", model=model_name, tokenizer=model_name
         )
